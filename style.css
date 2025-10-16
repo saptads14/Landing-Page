@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.container{
+    width: 100%;
+    height: 105vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url(images/background.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position:relative;
+}
+nav{
+    width: 105%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    width: 280px;
+    left: 10px;
+    cursor: pointer;
+}
+
+nav ul{
+    flex: 1;
+    text-align: right;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 30px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #80e8ff;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    z-index: 1;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+button{
+    color: #fbfcfd;
+    padding: 10px 25px;
+    background: transparent;
+    box-shadow: 0 5px 8px 0 rgba(0, 255, 234, 0.9);
+    border: 2px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.button span{
+    background: #009688;
+    height: 100%;
+    width: 0;
+    border-radius: 30px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+}
+button:hover {
+    border: 2px;
+}
+
+.box{
+    position: absolute;
+    bottom: 8%;
+    color: #ffffff;
+}
+.box p{
+    font-size:  50px ;
+    font-weight: 600;
+}
+.box h1{
+    font-size: 150px;
+    line-height: 180px;
+    margin-left: -10px;
+    color: transparent;
+    -webkit-text-stroke:1px #ffffff ;
+    background-image: url(images/back.png);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+.box h3{
+    font-size: 40px;
+    font-weight: 500;
+}
+.box .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+
+}
+.box a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border: 2px solid #fff ;
+    font-size: 18px;
+    display: flex;
+    align-items: center;    
+    background: transparent;
+    box-shadow: 0 5px 8px 0 rgba(0, 255, 234, 0.9);
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.box span{
+    font-size: 18px;
+    line-height: 20px;
+    margin-left: -10px; 
+}
+
+.social-icons{
+    position: absolute;
+    right: 2%;
+    bottom: -1%;
+}
+.social-icons img{
+    width: 25px;
+    display: block;
+    margin: 25px 5px;
+}

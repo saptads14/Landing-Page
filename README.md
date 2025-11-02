@@ -6,6 +6,7 @@ This is my first web dev project, built during my B.Tech 2nd year in 2023, after
 ---
 
 ## Features:
+- **Live Digital Clock** – Displays real-time local time dynamically
 - **Responsive Design** – Works seamlessly on desktops, tablets, and mobile devices  
 - **Animated Text Banner** – Stylish name animation with gradient effects  
 - **Interactive Navbar** – Hamburger toggle menu for small screens  

@@ -1,3 +1,4 @@
+/* -------------------- GLOBAL RESET -------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -12,22 +13,24 @@ body {
   padding-bottom: 0;
 }
 
+/* -------------------- CONTAINER -------------------- */
 .container {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), transparent), url(images/background.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), transparent), url(images/background.jpg);
   background-size: cover;
   background-position: center;
   padding: 0 8%;
   position: relative;
 }
 
-/* NAVBAR */
+/* -------------------- NAVBAR -------------------- */
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
+  padding-top: 25px;
 }
 
 .logo {
@@ -35,6 +38,7 @@ nav {
   cursor: pointer;
 }
 
+/* NAV LINKS */
 .nav-links {
   display: flex;
   list-style: none;
@@ -57,7 +61,7 @@ nav {
   color: #80e8ff;
 }
 
-/* Hamburger */
+/* -------------------- HAMBURGER MENU -------------------- */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -84,40 +88,45 @@ nav {
   transform: rotate(-45deg) translateY(-8px);
 }
 
-/* Box Section */
+/* -------------------- HERO BOX -------------------- */
 .box {
   position: absolute;
-  bottom: 18%; /* slightly raised to give room for social icons */
+  bottom: 20%;
   color: #fff;
 }
+
 .box p {
   font-size: 40px;
   font-weight: 600;
 }
+
 .box h1 {
   font-size: 100px;
   line-height: 120px;
   color: transparent;
-  -webkit-text-stroke: 1px #ffffff;
-  background-image: url(images/back.png);
   -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url(images/back.png);
   background-position: 0 0;
   animation: back 10s linear infinite;
 }
+
 @keyframes back {
   100% {
     background-position: 2000px 0;
   }
 }
+
 .box h3 {
   font-size: 28px;
   font-weight: 400;
 }
+
 .box .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 40px; /* spacing between text & buttons */
+  margin-top: 40px;
   gap: 18px;
 }
 
@@ -130,13 +139,16 @@ nav {
   margin-right: 15px;
   box-shadow: 0 4px 8px rgba(0, 213, 255, 0.6);
   transition: 0.3s;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
+
 .box a:hover {
   background: #299fed;
   color: #000;
 }
+
 .box span {
   display: block;
   margin-top: 12px;
@@ -145,7 +157,52 @@ nav {
   color: #e0f7ff;
 }
 
-/* --- Social Icons (centered bottom) --- */
+/* -------------------- DIGITAL CLOCK -------------------- */
+.currentTime {
+  position: absolute;
+  bottom: 11%;
+  left: 8%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.clock span {
+  font-size: 16px;
+  width: 25px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.clock span::after {
+  font-size: 10px;
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+}
+
+#hrs::after {
+  content: 'HRS';
+}
+#min::after {
+  content: 'MIN';
+}
+#sec::after {
+  content: 'SEC';
+}
+
+/* -------------------- SOCIAL ICONS -------------------- */
 .social-icons {
   position: absolute;
   bottom: 8%;
@@ -166,7 +223,38 @@ nav {
   transform: scale(1.2);
 }
 
-/* Responsive */
+/* -------------------- FOOTER -------------------- */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #e0f7ff;
+  text-align: center;
+  padding: 10px 8px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 10;
+  box-shadow: 0 -2px 12px rgba(0, 255, 255, 0.15);
+}
+
+footer span {
+  color: cyan;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+footer span:hover {
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+
+/* Tablets and below */
 @media (max-width: 900px) {
   .menu-toggle {
     display: flex;
@@ -201,20 +289,12 @@ nav {
   }
 
   .nav-links a {
-    color: #ffffff;
     font-size: 20px;
-    font-weight: 500;
     letter-spacing: 1px;
-    transition: 0.3s;
-  }
-
-  .nav-links a:hover {
-    color: #00e0ff;
-    text-shadow: 0 0 10px #00e0ff;
   }
 
   .box {
-    bottom: 22%; /* lifted a bit */
+    bottom: 22%;
     text-align: center;
   }
 
@@ -226,57 +306,102 @@ nav {
     font-size: 22px;
   }
 
-  .box span {
-    margin-top: 40px;
+  .currentTime {
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    padding: 8px 14px;
   }
 
-  /* Social icons with extra spacing in mobile */
+  .clock span {
+    font-size: 14px;
+  }
+
   .social-icons {
-    bottom: 8%; /* more gap from text */
+    bottom: 11%;
     gap: 20px;
-    position: fixed;
   }
 
   .social-icons img {
     width: 26px;
   }
-}
 
-
-/* -------------------- TRANSPARENT FOOTER -------------------- */
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.05); /* transparent glass effect */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #e0f7ff;
-  text-align: center;
-  padding: 10px 8px;
-  font-size: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
-  z-index: 10;
-  box-shadow: 0 -2px 12px rgba(0, 255, 255, 0.15);
-}
-
-footer span {
-  color: cyan;
-  font-weight: 500;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-}
-
-footer span:hover {
-  color: #00ffff;
-  text-shadow: 0 0 8px #00ffff;
-}
-
-/* Responsive footer text */
-@media (max-width: 480px) {
   footer {
     font-size: 13px;
+  }
+}
+
+/* Mobile devices (portrait) */
+@media (max-width: 480px) {
+
+  html, body {
+    height: 100%;
+    overflow: hidden; 
+    position: fixed;  
+    width: 100%;
+  }
+
+  .container {
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 6%;
+  }
+
+  .logo {
+    width: 180px;
+  }
+
+  .box p {
+    font-size: 26px;
+  }
+
+  .box h1 {
+    font-size: 48px;
+    line-height: 64px;
+    margin-bottom: 28px; 
+  }
+
+  .box h3 {
+    font-size: 18px;
+    margin-bottom: 20px; 
+  }
+
+  .box span {
+    margin-top: 15px;
+    line-height: 1.6;
+  }
+
+  .box {
+    bottom: 24%;
+    text-align: center;
+  }
+
+  .box .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .box a {
+    font-size: 15px;
+    padding: 10px 24px;
+  }
+
+  .currentTime {
+    bottom: 6%;
+    width: 80%;
+    justify-content: center;
+  }
+
+  .clock span {
+    font-size: 13px;
+    width: 25px;
+  }
+
+  footer {
+    font-size: 12px;
     padding: 8px 6px;
   }
 }
+
 

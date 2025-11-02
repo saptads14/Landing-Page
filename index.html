@@ -21,7 +21,7 @@
 
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Portfolio</a></li>
+        <li><a href="src/resume.pdf" class="resume-btn" download="Saptadeep_Halder_Resume.pdf">MY Resume</a></li>
         <li><a href="index.html">About</a></li>
         <li><a href="index.html">Sign Up</a></li>
         <li><a href="mailto:saptadeephalder2004@gmail.com">Contact</a></li>
@@ -33,10 +33,10 @@
       <p>I'M</p>
       <h1>SAPTADEEP</h1>
       <h3>Final Year B.Tech CSE (Data Science) @ The Neotia University || <br> Passionate about Data Science, ML-DL & Big Data || Aspiring Data Scientist ||</h3>
+      <span>You can explore more about my website and personal life experiences here</span>
       <div class="row">
-        <a href="index.html">Explore My Website</a>
+        <a href="index.html">Explore My Page</a>
         <a href="https://www.linkedin.com/in/saptadeep-halder04/">Connect With Me</a>
-        <span>You can explore more about my website and <br />personal life experiences here</span>
       </div>
     </div>
   </div>
@@ -47,9 +47,30 @@
     <a href="https://www.linkedin.com/in/saptadeep-halder04/"><img src="images/linkedin-dock.svg" alt="linkedin" /></a>
     <a href="https://www.instagram.com/saptadeep.14/"><img src="images/instagram-dock.svg" alt="instagram" /></a>
   </div>
+  <div class="currentTime">
+            <div class="clock">
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="min">00</span>
+            <span>:</span>
+            <span id="sec">00</span>
+            </div>
+        </div>
     <footer>
     &copy; 2023–2025 <span>Saptadeep</span>. All rights reserved.
   </footer>
+
+  <script>
+        let hrs= document.getElementById("hrs");
+        let min= document.getElementById("min");
+        let sec= document.getElementById("sec");
+        setInterval(()=>{
+        let currentTime = new Date();
+        hrs.innerHTML = (currentTime.getHours()<10?"0":"") + currentTime.getHours();
+        min.innerHTML = (currentTime.getMinutes()<10?"0":"") + currentTime.getMinutes();
+        sec.innerHTML = (currentTime.getSeconds()<10?"0":"") + currentTime.getSeconds();
+        },1000)
+    </script> 
 
   <script>
     // Toggle Menu

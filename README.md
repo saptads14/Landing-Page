@@ -1,4 +1,4 @@
-# 🌐 Personal Landing Page – @Saptadeep
+# Personal Landing Page – @Saptadeep
 
 A modern, fully responsive personal **Landing Page** built using **HTML, CSS, and JavaScript**.  
 This is my first web dev project, built during my B.Tech 2nd year in 2023, after gaining basic knowledge of HTML, CSS, and JavaScript. It marked the beginning of my web development journey.

@@ -44,6 +44,6 @@ Simply open the index.html file in your browser.
 
 ## License:
 © 2023–2025 Saptadeep Halder. All Rights Reserved.
-This project is open for educational and personal use.
+This project is open for educational and personal use only.
 
 

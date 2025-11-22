@@ -33,9 +33,59 @@ nav {
   padding-top: 25px;
 }
 
+/* -------------------- STYLISH LOGO -------------------- */
 .logo {
-  width: 180px;
+  font-family: 'Georgia, serif';
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  /* Deep dark shadow */
+  text-shadow:
+    0px 3px 4px rgba(255, 0, 0, 0.9),
+    0px 6px 12px rgba(255, 0, 0, 0.9),
+    0px 12px 22px rgb(255, 0, 0);
+
+  /* White outline aesthetic look */
+  -webkit-text-stroke: 1px #ffffff;
+
   cursor: pointer;
+  transition: 0.35s ease-in-out;
+}
+
+/* Hover: Smooth glow effect */
+.logo:hover {
+  text-shadow:
+    0px 4px 6px rgba(255, 255, 255, 0.5),
+    0px 8px 16px rgba(255, 255, 255, 0.4),
+    0px 14px 30px rgba(255, 255, 255, 0.3);
+  letter-spacing: 6px;
+}
+
+/* Tablet Responsive */
+@media (max-width: 900px) {
+  .logo {
+    font-size: 32px;
+    letter-spacing: 3px;
+    text-shadow:
+      0px 3px 5px rgba(255, 0, 0, 0.8),
+      0px 6px 14px rgba(255, 0, 0, 0.85);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+    letter-spacing: 2px;
+    -webkit-text-stroke: 0.7px #ffffff;
+
+    text-shadow:
+      0px 2px 4px rgba(255, 0, 0, 0.8),
+      0px 5px 10px rgba(255, 0, 0, 0.7);
+  }
 }
 
 /* NAV LINKS */
@@ -51,9 +101,10 @@ nav {
 }
 
 .nav-links a {
+  font-family: 'Georgia, serif';
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   transition: color 0.3s;
 }
 
